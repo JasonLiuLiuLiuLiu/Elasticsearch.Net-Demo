@@ -28,7 +28,7 @@ namespace Elasticsearch.Service
         private void InitClient()
         {
             var node = new Uri(_configuration["EsUrl"]);
-            _client = new ElasticClient(new ConnectionSettings(node));
+            _client = new ElasticClient(new ConnectionSettings(node).DefaultIndex("demo"));
         }
     }
 }
